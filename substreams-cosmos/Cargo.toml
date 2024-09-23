@@ -1,0 +1,22 @@
+[package]
+name = "substreams-cosmos"
+version.workspace = true
+description.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license.workspace = true
+keywords.workspace = true
+categories.workspace = true
+rust-version.workspace = true
+readme = "../README.md"
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+substreams = "^0.5"
+substreams-cosmos-core = { version = "0.*", path = "../core" }
+
+[dev-dependencies]
+anyhow = "1"

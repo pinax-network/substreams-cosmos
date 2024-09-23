@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = ["core", "substreams-cosmos"]
+
+[profile.release]
+lto = true
+opt-level = 's'
+strip = "debuginfo"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+description = "Substreams development kit for Cosmos chains, contains Firehose Block model and helpers."
+authors = ["Denis <denis@pinax.network>", "Yaro <yaro@pinax.network>"]
+homepage = "https://github.com/pinax-network/substreams-cosmos"
+repository = "https://github.com/pinax-network/substreams-cosmos"
+readme = "README.md"
+keywords = ["substreams", "cosmos", "pinax", "firehose", "thegraph"]
+categories = ["api-bindings", "external-ffi-bindings", "wasm"]
+license = "MIT"
+rust-version = "1.76"
+
+[workspace.dependencies]
+substreams-cosmos = { version = "0.1.*", path = "./substreams-cosmos" }
+substreams-cosmos-core = { version = "0.1.*", path = "./core" }
