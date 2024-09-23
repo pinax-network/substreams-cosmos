@@ -11,5 +11,5 @@ plugins:
       - no_features
 
 inputs:
-  - module: buf.build/enoldev/injective-core
+  # - module: buf.build/enoldev/injective-core
   - module: buf.build/streamingfast/firehose-cosmos
