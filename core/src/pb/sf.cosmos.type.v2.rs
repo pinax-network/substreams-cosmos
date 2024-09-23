@@ -1,4 +1,29 @@
 // @generated
+/// Repeated messages
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Events {
+    #[prost(message, repeated, tag="1")]
+    pub events: ::prost::alloc::vec::Vec<Event>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Transactions {
+    #[prost(message, repeated, tag="1")]
+    pub transactions: ::prost::alloc::vec::Vec<TxResults>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ValidatorUpdates {
+    #[prost(message, repeated, tag="1")]
+    pub validator_updates: ::prost::alloc::vec::Vec<ValidatorUpdate>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Misbehaviors {
+    #[prost(message, repeated, tag="1")]
+    pub misbehaviors: ::prost::alloc::vec::Vec<Misbehavior>,
+}
 /// Firehose-centric Block
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -141,7 +166,6 @@ pub struct Event {
 pub struct EventAttribute {
     #[prost(string, tag="1")]
     pub key: ::prost::alloc::string::String,
-    ///   bool   index = 3;  // nondeterministic
     #[prost(string, tag="2")]
     pub value: ::prost::alloc::string::String,
 }
@@ -158,7 +182,6 @@ pub struct EventBytes {
 pub struct EventAttributeBytes {
     #[prost(bytes="vec", tag="1")]
     pub key: ::prost::alloc::vec::Vec<u8>,
-    ///   bool   index = 3;  // nondeterministic
     #[prost(bytes="vec", tag="2")]
     pub value: ::prost::alloc::vec::Vec<u8>,
 }
@@ -253,8 +276,8 @@ pub struct EvidenceParams {
     /// attacks](<https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed>).
     #[prost(message, optional, tag="2")]
     pub max_age_duration: ::core::option::Option<::prost_types::Duration>,
-    /// This sets the maximum size of total evidence in bytes that can be committed in a single block.
-    /// and should fall comfortably under the max block bytes.
+    /// This sets the maximum size of total evidence in bytes that can be committed
+    /// in a single block. and should fall comfortably under the max block bytes.
     /// Default is 1048576 or 1MB
     #[prost(int64, tag="3")]
     pub max_bytes: i64,

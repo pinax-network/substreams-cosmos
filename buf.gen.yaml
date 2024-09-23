@@ -1,15 +1,14 @@
 version: v2
 plugins:
   - remote: buf.build/community/neoeinstein-prost:v0.2.2
-    out: ./src/pb
+    out: ./core/src/pb
     opt:
       - file_descriptor_set=false
 
   - remote: buf.build/community/neoeinstein-prost-crate:v0.3.1
-    out: ./src/pb
+    out: ./core/src/pb
     opt:
       - no_features
 
-inputs:
-  # - module: buf.build/enoldev/injective-core
-  - module: buf.build/streamingfast/firehose-cosmos
+# inputs:
+#   - module: buf.build/streamingfast/firehose-cosmos
