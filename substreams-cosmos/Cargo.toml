@@ -15,7 +15,7 @@ readme = "../README.md"
 maintenance = { status = "actively-developed" }
 
 [dependencies]
-substreams = "^0.5"
+substreams = "^0.6.0"
 substreams-cosmos-core = { version = "0.*", path = "../core" }
 
 [dev-dependencies]
